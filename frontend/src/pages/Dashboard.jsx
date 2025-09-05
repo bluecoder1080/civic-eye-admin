@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react'
+import api from '../config/api'
 import { useAuth } from '../contexts/AuthContext'
-import { LogOut, CheckCircle, Clock, AlertCircle, Users, BarChart3, Settings, RefreshCw } from 'lucide-react'
-import axios from 'axios'
+import { 
+  AlertCircle, 
+  CheckCircle, 
+  Clock, 
+  BarChart3, 
+  RefreshCw, 
+  LogOut 
+} from 'lucide-react'
 
 const Dashboard = () => {
   const { user, logout } = useAuth()
@@ -10,14 +17,11 @@ const Dashboard = () => {
   const [refreshing, setRefreshing] = useState(false)
   const [resolvingIds, setResolvingIds] = useState(new Set())
 
-  // Configure axios defaults
-  axios.defaults.baseURL = 'http://localhost:5000'
-
   const fetchIssues = useCallback(async (showRefreshLoader = false) => {
     try {
       if (showRefreshLoader) setRefreshing(true)
       console.log('Fetching issues from API...')
-      const response = await axios.get('/api/issues')
+      const response = await api.get('/api/issues')
       console.log('API Response:', response.data)
       setIssues(response.data)
     } catch (error) {
@@ -48,7 +52,7 @@ const Dashboard = () => {
   const handleResolveIssue = async (issueId) => {
     try {
       setResolvingIds(prev => new Set([...prev, issueId]))
-      await axios.patch(`/api/issues/${issueId}/resolve`)
+      await api.patch(`/api/issues/${issueId}/resolve`)
       
       // Optimistically update the UI
       setIssues(prevIssues => 
