@@ -4,7 +4,7 @@ FROM node:18-alpine AS frontend-build
 # Build frontend
 WORKDIR /app/frontend
 COPY frontend/package*.json ./
-RUN npm ci --only=production
+RUN npm ci
 COPY frontend/ ./
 RUN npm run build
 
@@ -25,6 +25,9 @@ RUN mkdir -p uploads
 
 # Expose port
 EXPOSE 5000
+
+# Install curl for health check
+RUN apk add --no-cache curl
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
