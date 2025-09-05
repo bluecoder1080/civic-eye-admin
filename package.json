@@ -1,0 +1,26 @@
+{
+  "name": "jharkhand-municipal-portal",
+  "version": "1.0.0",
+  "description": "Jharkhand Municipal Portal - Government of Jharkhand",
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build && cd .. && npm run build:backend",
+    "build:backend": "cd backend && npm install --production",
+    "start": "cd backend && npm start",
+    "deploy": "npm run build && npm run start"
+  },
+  "keywords": [
+    "jharkhand",
+    "municipal",
+    "government",
+    "civic-issues"
+  ],
+  "author": "Government of Jharkhand",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
