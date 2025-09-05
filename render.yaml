@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: civic-eye-admin
+    env: docker
+    repo: https://github.com/bluecoder1080/civic-eye-admin.git
+    branch: main
+    dockerfilePath: ./Dockerfile
+    region: oregon
+    plan: starter
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        fromDatabase:
+          name: civic-eye-db
+          property: connectionString
+      - key: CORS_ORIGINS
+        value: https://civic-eye-admin.onrender.com
+      - key: SESSION_SECRET
+        generateValue: true
+
+databases:
+  - name: civic-eye-db
+    databaseName: jharkhand_municipal_portal
+    user: admin
+    region: oregon
+    plan: starter
