@@ -22,10 +22,10 @@ const LandingPage = () => {
                 <p className="text-orange-600 text-sm font-medium">Municipal Administration Portal</p>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
-              <div className="hidden md:flex items-center space-x-2 text-sm text-gray-600">
+            <div className="flex items-center space-x-6">
+              <div className="hidden md:flex items-center space-x-2 text-sm text-gray-600 bg-green-50 px-3 py-2 rounded-full border border-green-200">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span>System Online</span>
+                <span className="font-medium">System Online</span>
               </div>
               <Link 
                 to="/login" 
@@ -138,31 +138,31 @@ const LandingPage = () => {
       </section>
 
       {/* Statistics Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-500 to-red-500 text-white">
+      <section className="py-20 bg-gradient-to-r from-orange-500 to-red-500 text-white statistics-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Making a Difference</h2>
-            <p className="text-xl text-orange-100">
+            <h2 className="text-4xl font-bold mb-4 text-yellow-300" style={{fontSize: '3rem', fontWeight: '900', color: '#fde047', textShadow: '3px 3px 6px rgba(0,0,0,0.8)'}}>Making a Difference</h2>
+            <p className="text-xl font-bold text-yellow-200" style={{fontSize: '1.5rem', fontWeight: '700', color: '#fef08a', textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
               Transforming civic governance through digital innovation
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-5xl font-bold mb-2">24</div>
-              <div className="text-orange-100">Districts Covered</div>
+            <div style={{backgroundColor: '#ffffff', borderRadius: '1rem', padding: '2rem', border: '3px solid #374151', boxShadow: '0 10px 25px rgba(0,0,0,0.3)'}}>
+              <div style={{fontSize: '4rem', fontWeight: '900', color: '#000000', marginBottom: '1rem', textShadow: 'none'}}>24</div>
+              <div style={{fontSize: '1.25rem', fontWeight: '700', color: '#000000'}}>Districts Covered</div>
             </div>
-            <div>
-              <div className="text-5xl font-bold mb-2">1000+</div>
-              <div className="text-orange-100">Issues Resolved</div>
+            <div style={{backgroundColor: '#ffffff', borderRadius: '1rem', padding: '2rem', border: '3px solid #374151', boxShadow: '0 10px 25px rgba(0,0,0,0.3)'}}>
+              <div style={{fontSize: '4rem', fontWeight: '900', color: '#000000', marginBottom: '1rem', textShadow: 'none'}}>1000+</div>
+              <div style={{fontSize: '1.25rem', fontWeight: '700', color: '#000000'}}>Issues Resolved</div>
             </div>
-            <div>
-              <div className="text-5xl font-bold mb-2">50+</div>
-              <div className="text-orange-100">Municipal Bodies</div>
+            <div style={{backgroundColor: '#ffffff', borderRadius: '1rem', padding: '2rem', border: '3px solid #374151', boxShadow: '0 10px 25px rgba(0,0,0,0.3)'}}>
+              <div style={{fontSize: '4rem', fontWeight: '900', color: '#000000', marginBottom: '1rem', textShadow: 'none'}}>50+</div>
+              <div style={{fontSize: '1.25rem', fontWeight: '700', color: '#000000'}}>Municipal Bodies</div>
             </div>
-            <div>
-              <div className="text-5xl font-bold mb-2">24/7</div>
-              <div className="text-orange-100">System Availability</div>
+            <div style={{backgroundColor: '#ffffff', borderRadius: '1rem', padding: '2rem', border: '3px solid #374151', boxShadow: '0 10px 25px rgba(0,0,0,0.3)'}}>
+              <div style={{fontSize: '4rem', fontWeight: '900', color: '#000000', marginBottom: '1rem', textShadow: 'none'}}>24/7</div>
+              <div style={{fontSize: '1.25rem', fontWeight: '700', color: '#000000'}}>System Availability</div>
             </div>
           </div>
         </div>
